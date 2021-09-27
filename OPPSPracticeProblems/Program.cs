@@ -6,36 +6,33 @@ using System.Threading.Tasks;
 
 namespace OPPSPracticeProblems
 {
+    class Vehicle  // base class (parent) 
+    {
+        public string brand = "BMW";  // Vehicle field
+        public void honk()             // Vehicle method 
+        {
+            Console.WriteLine("PEE PEP!!!");
+        }
+    }
+
+    class Car : Vehicle  // derived class (child)
+    {
+        public string modelName = "Mustang";  // Car field
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Pig myPig = new Pig(); // Create a Pig object
-            myPig.animalSound();  // Call the abstract method
-            myPig.sleep();  // Call the regular method
+            // Create a myCar object
+            Car myCar = new Car();
+
+            // Call the honk() method (From the Vehicle class) on the myCar object
+            myCar.honk();
+
+            // Display the value of the brand field (from the Vehicle class) and the value of the modelName from the Car class
+            Console.WriteLine(myCar.brand + " " + myCar.modelName);
             Console.ReadLine();
-        }
-        // Abstract class
-        abstract class Animal
-        {
-            // Abstract method (does not have a body)
-            public abstract void animalSound();
-
-            // Regular method
-            public void sleep()
-            {
-                Console.WriteLine("Sleep Well");
-            }
-        }
-
-        // Derived class (inherit from Animal)
-        class Pig : Animal
-        {
-            public override void animalSound()
-            {
-                // The body of animalSound() is provided here
-                Console.WriteLine("The pig makes !!!wee!!! sound");
-            }
         }
     }
 }
