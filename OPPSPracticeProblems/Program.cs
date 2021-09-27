@@ -6,38 +6,33 @@ using System.Threading.Tasks;
 
 namespace OPPSPracticeProblems
 {
-    class Animal  // Base class (parent) 
+    class program
     {
-        public virtual void animalSound()
+        // adding two integer values.
+        public int Add(int a, int b)
         {
-            Console.WriteLine("The animal makes a sound");
+            int sum = a + b;
+            return sum;
         }
-    }
-    class Pig : Animal  // Derived class (child) 
-    {
-        public override void animalSound()
-        {
-            Console.WriteLine("The pig says: wee wee");
-        }
-    }
-    class Dog : Animal  // Derived class (child) 
-    {
-        public override void animalSound()
-        {
-            Console.WriteLine("The dog says: bow wow");
-        }
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Animal myAnimal = new Animal();  // Create a Animal object
-            Animal myPig = new Pig();  // Create a Pig object
-            Animal myDog = new Dog();  // Create a Dog object
 
-            myAnimal.animalSound();
-            myPig.animalSound();
-            myDog.animalSound();
+        // adding three integer values.
+        public int Add(int a, int b, int c)
+        {
+            int sum = a + b + c;
+            return sum;
+        }
+
+        // Main Method
+        public static void Main(String[] args)
+        {
+            // Creating Object
+            program ob = new program();
+
+            int sum1 = ob.Add(1, 2);
+            Console.WriteLine("sum of the two "+ "integer value : " + sum1);
+
+            int sum2 = ob.Add(1, 2, 3);
+            Console.WriteLine("sum of the three "+ "integer value : " + sum2);
             Console.ReadLine();
         }
     }
