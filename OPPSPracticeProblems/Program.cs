@@ -6,34 +6,44 @@ using System.Threading.Tasks;
 
 namespace OPPSPracticeProblems
 {
-    class program
+    public class program
     {
-        // adding two integer values.
-        public int Add(int a, int b)
+        // private variables declared
+        // these can only be accessed by
+        // public methods of class
+        private String studentName;
+        private int studentAge;
+
+        // using accessors to get and 
+        // set the value of studentName
+        public String Name { get; set; }
+        // using accessors to get and 
+        // set the value of studentAge
+        public int Age { get; set; }
+        // Driver Class
+        class GFG
         {
-            int sum = a + b;
-            return sum;
-        }
+            // Main Method
+            static public void Main()
+            {
 
-        // adding three integer values.
-        public int Add(int a, int b, int c)
-        {
-            int sum = a + b + c;
-            return sum;
-        }
+                // creating object
+                program obj = new program();
 
-        // Main Method
-        public static void Main(String[] args)
-        {
-            // Creating Object
-            program ob = new program();
+                // calls set accessor of the property Name, 
+                // and pass "Varun" as value of the 
+                // standard field 'value'
+                obj.Name = "Varun";
 
-            int sum1 = ob.Add(1, 2);
-            Console.WriteLine("sum of the two "+ "integer value : " + sum1);
+                // calls set accessor of the property Age, 
+                // and pass "21" as value of the 
+                // standard field 'value'
+                obj.Age = 21;
 
-            int sum2 = ob.Add(1, 2, 3);
-            Console.WriteLine("sum of the three "+ "integer value : " + sum2);
-            Console.ReadLine();
+                // Displaying values of the variables
+                Console.WriteLine("Name: " + obj.Name);
+                Console.WriteLine("Age: " + obj.Age);
+            }
         }
     }
 }
